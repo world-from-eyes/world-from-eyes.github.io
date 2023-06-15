@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Seeing the World through Your Eyes</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Seeing the World through Your Eyes</span></h1>
+
+
+          <span class="link-block">
+          <!-- arxiv Link add TODO. -->
+          <a href=""
+             class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span>arXiv</span>
+          </a>
+
+        </span>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- <h2 class="title is-4">Results on single-camera scenes</h2> -->
+
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-kirby_dog">
+          <video poster="" id="kirby_dog" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/kirby_dog.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-alien">
+          <video poster="" id="alien" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/alien.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-dog_plant">
+          <video poster="" id="dog_plant" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dog_plant.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ukulele">
+          <video poster="" id="ukulele" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ukulele.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+      <h3>
+        <center>
+        From a handful of portrait photos of a person, we compute a 3D reconstruction of what they are observing using the eye reflections!
+      </center>
+    </h3>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- <h2 class="title is-4">Results on single-camera scenes</h2> -->
+
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-classroom">
+          <video poster="" id="classroom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/classroom_spiral.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-kitchen">
+          <video poster="" id="kitchen" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/kitchen_spiral.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-living_room">
+          <video poster="" id="living_room" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/living_room.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-barbershop">
+          <video poster="" id="barbershop" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/barbershop.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+      <h3>
+        <center>
+        By placing realistic eye models in synthetic scenes, we perform full scene reconstruction using only the eye reflections. 
+      </center>
+    </h3>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract. -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified">
+      The reflective nature of the human eye is an underappreciated source of information about what the world around us looks like. 
+By imaging the eyes of a moving person, we can collect multiple views of a scene outside the camera's direct line-of-sight through the reflections in the eyes. In this paper,
+we reconstruct a 3D scene beyond the camera's line-of-sight using portrait images containing eye reflections. <br>
+This task is challenging due to <b>1)</b> the difficulty of accurately estimating eye pose and <b>2)</b> the entangled texture of the eye iris and the scene reflections.
+Our method jointly refines the cornea poses, the radiance field depicting the scene, and the observer's eye iris texture. We further propose a simple regularization prior on the iris texture pattern to improve reconstruction quality. 
+Through various experiments on synthetic and real-world captures featuring people with varied eye colors, we demonstrate the feasibility of our approach to recover 3D scenes using eye reflections.
+    </div>
+  </div>
+</div>
+<!--/ Abstract. -->
+<!-- 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4">Results on single-camera scenes</h2>
+
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_chair.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_ship.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_drums.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_lego.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_ficus.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_hotdog.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_materials.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_mic.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_yujia.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/p_law.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <p>
+        We also deploy our method on multi-camera captures, including 8 synthetic scenes generated with Blender,
+         and 2 real-world scenes focused on human captures. 
+         We perform more analysis using the Blender scenes where ground truth can be generated.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="hero-body">
+  <div class="container">
+    <h2 class="title is-4"><b>Stablization from handheld captures</b></h2>
+  </div>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="content" align="center">
+      <video autoplay muted loop playsinline controls width="80%">
+        <source src="./static/videos/2DCompare.mp4"
+            type="video/mp4">
+      </video>
+      <p>
+        Prior 2D method (phase-based Eulerian) fails on a handheld-captured video with camera shake as it assumes stablized or tripod capture.
+        Our method benefits from having a 3D representation and successfully separates camear motion from scene motion.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="hero-body">
+  <div class="container">
+      <h2 class="title is-4"><b>Remapping to handheld poses</b></h2>
+  </div>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="content" align="center">
+      <video autoplay muted loop playsinline controls width="80%">
+        <source src="./static/videos/TrackedPose.mp4"
+            type="video/mp4">
+      </video>
+      <p>
+        We provide motion-magnified rendering at <b><i>Tracked Poses</i></b>, which are estimated from the 
+        <br>shaky handheld capture, 
+        and <b><i>Fixed Pose</i></b>, which is a static viewpoint.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="hero-body">
+  <div class="container">
+    <h2 class="title is-4"><b>Frequency selection</b></h2>
+  </div>
+  <br>
+  <div class="container is-max-desktop">
+    <div class="content" align="center">
+      <video autoplay muted loop playsinline controls width="80%">
+        <source src="./static/videos/fork2.mp4"
+            type="video/mp4">
+      </video>
+      <p>
+        We capture two tuning forks with different vibration frequnecies (Left: 64 Hz, Right: 128 Hz). <br>
+        By temporally filtering the point embeddings, we can selectively amplify different frequencies.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4">Comparisons of different magnification strategies</h2>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <h4 class="is-4" align="center"><b>Using Positional Encoding as Point Embedding Function</b></h4>
+    </div>
+  </div>
+  <div class="container is-max-desktop">    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" align="center">
+          <video id="teaser" autoplay muted loop playsinline controls width="99%">
+        <source src="./static/videos/false_motion.mp4"
+                type="video/mp4">
+      </video>
+          <p>
+            <b><i>Position Shift</i></b> predicts a 3D displacement for the input point before positional encoding, while
+            <b><i>Encoding Shift</i></b> predicts a phase shift within each sine wave for the input point during positional encoding.
+            We perform Linear Eulerian magnification by amplifying the temporal variations of the predicted shifts.
+            <b><i>Position Shift</i></b> leads to false motions, while <b><i>Encoding Shift</i></b> reduces such artifacts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="hero-body">
+    <div class="container">
+      <h4 class="is-4" align="center"><b>Using Tri-Plane as Point Embedding Function</b></h>
+    </div>
+  </div>
+  <div class="container is-max-desktop">    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" align="center">
+          <video id="teaser" autoplay muted loop playsinline controls width="99%">
+        <source src="./static/videos/clipped.mp4"
+                type="video/mp4">
+      </video>
+          <p>
+            <b><i>Linear - Tri-Plane</i></b> applies linear Eulerian magnification on tri-plane features.<br>
+            <b><i>Phase - Tri-Plane</i></b> applies phase-based Eulerian magnification on tri-plane features.<br>
+            <b><i>Linear - Tri-Plane</i></b> causes artifacts like clipped intensities, while <b><i>Phase - Tri-Plane</i></b> reduces such artifacts.
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4">Varying the magnification factor</h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <video id="teaser" autoplay muted loop playsinline controls width="99%">
+            <source src="./static/videos/varyalpha.mp4"
+                type="video/mp4">
+          </video>
+          <p align="center">
+            We visualize the impact of varying the magnification factor.
+          </p>
+        <br>
+        </div>
+      </div>
+  
+      </div>
+  </div>
+  <br>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-4">Comparisons to video-based magnificatios</h2>
+
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-chair">
+          <video poster="" id="hand" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-drums">
+          <video poster="" id="train" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/drums.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ficus">
+          <video poster="" id="horsejump-low" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ficus.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-hotdog">
+          <video poster="" id="kite-walk" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hotdog.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-lego">
+          <video poster="" id="kite-walk" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/lego.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-materials">
+          <video poster="" id="kite-walk" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/materials.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mic">
+          <video poster="" id="kite-walk" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mic.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-ship">
+          <video poster="" id="kite-walk" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ship.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <p align="left">
+        <b><i>Observed</i></b> are Blender renderings from scenes with subtle object motions. 
+        <b><i>Ground Truth</i></b>  are Blender renderings where the true object motions are artificially amplified. <br>
+        <b><i>Linear - Video</i></b>  and <b><i>Phase - Video</i></b>  are obtained by deploying 2D magnification methods on the non-magnified RGB videos rendered by NeRF. 
+        In general, 3D methods that perform magnification in the embedding space produce fewer artifacts compared to 2D methods.
+        Furthermore, 2D methods requires rendering at a fixed viewpoint and, for every new rendering, re-running video magnification on the fly.
+        In contrast, magnification on tri-planes is performed just once, and the motion-magnified tri-planes can then be used to render at new viewpoints.
+     </p>
+    </div>
+    <br>
+  </div>
+</section> -->
+
+
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+        <div class="content">
+            The website template is from <a href="https://nerfies.github.io/">Nerfies</a>.
+        </div>
+      </div>
+    </div>
+</footer>
+
+</body>
+</html>
