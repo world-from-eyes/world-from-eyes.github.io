@@ -147,6 +147,96 @@ Through various experiments on synthetic and real-world captures featuring peopl
     </div>
   </div>
 </div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">How we did it?</h2>
+    <div class="content has-text-justified">
+
+      The cornea geometry is approximately the same across all healthy adults. Because of this fact, if we count the pixel size of a person's cornea in the image, we can compute exactly where their eyes are.  Using this insight, we train the radiance field on the eye reflections by shooting rays from the camera, and reflecting them off the approximated eye geometry. To remove the iris from showing up in the reconstruction, we perform <b> texture decomposition </b> by simultaneously training a 2D texture map that learns the iris texture.
+
+      <center>
+        <img src="./static/images/rf-eyes-overview-figure-arrow.png">
+      </center>
+      However, approximating the eye pose just from the image is always very noisy. To address this issue, we perform <b>eye pose optimization</b> which is critical for performance as we show below.
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Eye pose optimization ablation</h2>
+    <div class="content has-text-justified">
+
+      <!-- <label class="label" id="example2_deblurring_w" style="width: 49%; vertical-align: middle;margin: 0; padding: 0;">
+      <video poster="" id="no_pose" autoplay controls muted loop playsinline>
+        <source src="./static/videos/lit_plushies_spiral_no_pose.mp4"
+                type="video/mp4">
+      </video>
+      </label>
+      <label class="label" id="example2_deblurring_w" style="width: 48%; vertical-align: middle;margin: 0; padding: 0;">
+      <video poster="" id="no_pose" autoplay controls muted loop playsinline>
+        <source src="./static/videos/lit_plushies_spiral.mp4"
+                type="video/mp4">
+      </video>
+      </label> -->
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" id="no_pose" autoplay controls muted loop playsinline>
+            <source src="./static/videos/lit_plushies_spiral_no_pose.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Without pose optimization</p>
+        </div>
+        <div style="width: 4%;">
+        </div>
+        <div style="width: 48%; text-align: center;">
+          <video poster="" id="pose" autoplay controls muted loop playsinline>
+            <source src="./static/videos/lit_plushies_spiral.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">With pose optimization</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Texture decomposition ablation</h2>
+    <div class="content has-text-justified">
+
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" id="no_texture" autoplay controls muted loop playsinline>
+            <source src="./static/videos/kibry_dog_spiral_no_texture.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Without texture decomposition</p>
+        </div>
+        <div style="width: 4%;">
+        </div>
+        <div style="width: 48%; text-align: center;">
+          <video poster="" id="tex" autoplay controls muted loop playsinline>
+            <source src="./static/videos/kibry_dog_spiral.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">With texture decomposition</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">In the wild examples</h2>
+    <div class="content has-text-justified">
+
+      <center>
+        
+      </center>
+    </div>
+  </div>
+</div>
 <!--/ Abstract. -->
 <!-- 
 <section class="hero is-small">
