@@ -56,7 +56,7 @@
 
           <div class="is-size-5 publication-authors">
 
-            <span class="author-block">University of Maryland</span>
+            <span class="author-block">University of Maryland, College Park</span>
             <!-- <span class="author-block"><sup></span> -->
           </div>
 
@@ -106,9 +106,9 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-alien">
-          <video poster="" id="alien" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/plushies.mp4"
+        <div class="item item-poster">
+          <video poster="" id="poster" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/poster.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -118,18 +118,20 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-outdoor">
+        <div class="item item-alien">
+          <video poster="" id="alien" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/plushies.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <!-- <div class="item item-outdoor">
           <video poster="" id="outdoor" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/outdoor.mp4"
                     type="video/mp4">
           </video>
-        </div>
-        <div class="item item-poster">
-          <video poster="" id="poster" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/poster.mp4"
-                    type="video/mp4">
-          </video>
-        </div>        
+        </div> -->
+      
       </div>
       <h3>
         <center>
@@ -193,11 +195,14 @@
     <h2 class="title is-3">Abstract</h2>
     <div class="content has-text-justified">
       The reflective nature of the human eye is an underappreciated source of information about what the world around us looks like. 
-By imaging the eyes of a moving person, we can collect multiple views of a scene outside the camera's direct line-of-sight through the reflections in the eyes. In this paper,
-we reconstruct a 3D scene beyond the camera's line-of-sight using portrait images containing eye reflections. <br>
-This task is challenging due to <b>1)</b> the difficulty of accurately estimating eye pose and <b>2)</b> the entangled texture of the eye iris and the scene reflections.
-Our method jointly refines the cornea poses, the radiance field depicting the scene, and the observer's eye iris texture. We further propose a simple regularization prior on the iris texture pattern to improve reconstruction quality. 
-Through various experiments on synthetic and real-world captures featuring people with varied eye colors, we demonstrate the feasibility of our approach to recover 3D scenes using eye reflections.
+By imaging the eyes of a moving person, we capture multiple views of a scene outside the camera's direct line of sight through the reflections in the eyes. 
+In this paper, we reconstruct a radiance field beyond the camera's line of sight using portrait images containing eye reflections. <br>
+This task is challenging due to 
+<b>1)</b> the difficulty of accurately estimating eye poses and 
+<b>2)</b> the entangled appearance of the iris textures and the scene reflections.
+To address these, our method jointly optimizes the cornea poses, the radiance field depicting the scene, and the observer's eye iris texture. 
+We further present a regularization prior on the iris texture to improve scene reconstruction quality. 
+Through various experiments on synthetic and real-world captures featuring people with varied eye colors, and lighting conditions, we demonstrate the feasibility of our approach to recover the radiance field using cornea reflections. 
     </div>
   </div>
 </div>
